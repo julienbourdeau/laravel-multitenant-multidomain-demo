@@ -24,8 +24,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app['router']->pattern('user_domain', '.*');
-
         parent::boot();
     }
 

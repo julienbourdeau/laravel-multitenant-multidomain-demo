@@ -14,9 +14,10 @@ class EventController extends Controller
         return view('site.home');
     }
 
-    public function index(EventList $eventList)
+    public function index()
     {
-        $events = Event::all();
+        return '[Tenant] event list';
+        //
 
         return view('site.events', [
             'events' => $events,
@@ -24,8 +25,11 @@ class EventController extends Controller
         ]);
     }
 
-    public function show(EventList $eventList, Event $event)
+    public function show()
     {
+        return '[Tenant] single event';
+//        dd(func_get_args());
+
         return view('site.event', [
             'event' => $event,
             'eventList' => $eventList,

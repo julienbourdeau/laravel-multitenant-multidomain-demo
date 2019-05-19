@@ -16,6 +16,7 @@ class CurrentEventListScope implements Scope
     {
         $this->id = $id;
     }
+
     /**
      * Apply the scope to a given Eloquent query builder.
      *

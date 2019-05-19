@@ -26,15 +26,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Route::bind('user_domain', function ($value) {
-            return EventList::where('domain', $value)->firstOrFail();
-        });
+//        Route::bind('user_domain', function ($value) {
+//            return EventList::where('domain', $value)->firstOrFail();
+//        });
 
-        Route::bind('event', function ($value, \Illuminate\Routing\Route $route) {
-            return Event::where([
-                'id' => $value,
-                'event_list_id' => $route->parameter('user_domain')->id,
-            ])->first() ?? abort(404);
-        });
+//        Route::bind('event', function ($value, \Illuminate\Routing\Route $route) {
+//            return Event::where([
+//                'id' => $value,
+//                'event_list_id' => $route->parameter('user_domain')->id,
+//            ])->firstOrFail();
+//        });
     }
 }
