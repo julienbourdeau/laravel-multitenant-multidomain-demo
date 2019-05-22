@@ -11,11 +11,16 @@
 </head>
 <body class="">
 
+<div class="bg-teal-300 border-b border-teal-400 py-4 text-center text-teal-800 text-3xl">
+    Marketing website
+</div>
+
 <div class="md:w-2/3 lg:w-1/2 m-auto py-4">
 
     @php
     $current = request()->route()->getActionMethod()
     @endphp
+
 
     <header class="my-6 flex justify-between">
 
