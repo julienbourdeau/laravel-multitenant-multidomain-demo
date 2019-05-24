@@ -24,11 +24,8 @@ class EventController extends Controller
         ]);
     }
 
-    public function show($domain, $id)
+    public function show(EventList $eventList, Event $event)
     {
-        $event = Event::find($id);
-        $eventList = EventList::where('domain', $domain)->first();
-        
         return view('site.event', [
             'event' => $event,
             'eventList' => $eventList,

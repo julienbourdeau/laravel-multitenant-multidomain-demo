@@ -26,9 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        Route::bind('user_domain', function ($value) {
-//            return EventList::where('domain', $value)->firstOrFail();
-//        });
+        Route::bind('user_domain', function ($value) {
+            return EventList::where('domain', $value)->firstOrFail();
+        });
 
 //        Route::bind('event', function ($value, \Illuminate\Routing\Route $route) {
 //            return Event::where([
