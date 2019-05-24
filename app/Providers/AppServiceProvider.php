@@ -30,11 +30,11 @@ class AppServiceProvider extends ServiceProvider
             return EventList::where('domain', $value)->firstOrFail();
         });
 
-//        Route::bind('event', function ($value, \Illuminate\Routing\Route $route) {
-//            return Event::where([
-//                'id' => $value,
-//                'event_list_id' => $route->parameter('user_domain')->id,
-//            ])->firstOrFail();
-//        });
+        Route::bind('event', function ($value, \Illuminate\Routing\Route $route) {
+            return Event::where([
+                'id' => $value,
+                'event_list_id' => $route->parameter('user_domain')->id,
+            ])->firstOrFail();
+        });
     }
 }
