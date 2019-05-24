@@ -40,8 +40,12 @@ Route::domain('api.eventlist.test')->group(function () {
 // USER GENERATED Sites
 // parisrockshows.com, concerts-madrid.com
 
-//Route::get('/', 'Tenant\EventController@home');
-//Route::get('/events', 'Tenant\EventController@index');
-//Route::get('/event/{event}', 'Tenant\EventController@show');
+Route::domain('{user_domain}')->group(function() {
+
+    Route::get('/', 'Tenant\EventController@home');
+    Route::get('/events', 'Tenant\EventController@index');
+    Route::get('/event/{event}', 'Tenant\EventController@show');
+
+});
 
 
