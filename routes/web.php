@@ -14,6 +14,7 @@
 use App\Event;
 use App\EventList;
 use App\Http\Middleware\EnsureCurrentEventList;
+use App\Http\Middleware\RegisterUrlDefaults;
 
 
 // Marketing website hosted on eventlist.com
@@ -42,16 +43,15 @@ Route::domain('api.eventlist.test')->group(function () {
 // parisrockshows.com, concerts-madrid.com
 
 Route::domain('{user_domain}')
-    ->middleware(EnsureCurrentEventList::class)
+    ->middleware([EnsureCurrentEventList::class, RegisterUrlDefaults::class])
     ->group(function() {
 
     Route::get('/', 'Tenant\EventController@home');
     Route::get('/events', 'Tenant\EventController@index');
     Route::get('/event/{event}', 'Tenant\EventController@show')->name('event');
 
-    Route::get('/link', function(EventList $eventList) {
+    Route::get('/link', function() {
         return route('event', [
-            'user_domain' => $eventList->domain,
             'event' => 1
         ]);
     });
