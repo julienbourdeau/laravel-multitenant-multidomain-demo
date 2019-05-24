@@ -21,7 +21,8 @@
 
         <header class="bg-gray-200 px-4 py-3">
             <a href="/" class="mr-4 text-blue-700 underline hover:text-red-600 hover:no-underline">Home</a>
-            <a href="/events" class="text-blue-700 underline hover:text-red-600 hover:no-underline">Events</a>
+            <a href="/events" class="mr-4 text-blue-700 underline hover:text-red-600 hover:no-underline">Events</a>
+            <a href="/link" class="text-blue-700 underline hover:text-red-600 hover:no-underline">Link</a>
 
             <div class="float-right">
                 <a href="/event/1" class="text-green-600 hover:no-underline">Event #1</a>

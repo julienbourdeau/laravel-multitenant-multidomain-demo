@@ -46,7 +46,13 @@ Route::domain('{user_domain}')
 
     Route::get('/', 'Tenant\EventController@home');
     Route::get('/events', 'Tenant\EventController@index');
-    Route::get('/event/{event}', 'Tenant\EventController@show');
+    Route::get('/event/{event}', 'Tenant\EventController@show')->name('event');
+
+    Route::get('/link', function() {
+        return route('event', [
+            'event' => 1
+        ]);
+    });
 
 });
 
