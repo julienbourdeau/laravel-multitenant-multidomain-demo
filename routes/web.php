@@ -40,7 +40,9 @@ Route::domain('api.eventlist.test')->group(function () {
 // USER GENERATED Sites
 // parisrockshows.com, concerts-madrid.com
 
-Route::domain('{user_domain}')->group(function() {
+Route::domain('{user_domain}')
+    ->middleware(EnsureCurrentEventList::class)
+    ->group(function() {
 
     Route::get('/', 'Tenant\EventController@home');
     Route::get('/events', 'Tenant\EventController@index');
