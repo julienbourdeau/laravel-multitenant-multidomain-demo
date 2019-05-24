@@ -12,6 +12,7 @@
 */
 
 use App\Event;
+use App\EventList;
 use App\Http\Middleware\EnsureCurrentEventList;
 
 
@@ -48,8 +49,9 @@ Route::domain('{user_domain}')
     Route::get('/events', 'Tenant\EventController@index');
     Route::get('/event/{event}', 'Tenant\EventController@show')->name('event');
 
-    Route::get('/link', function() {
+    Route::get('/link', function(EventList $eventList) {
         return route('event', [
+            'user_domain' => $eventList->domain,
             'event' => 1
         ]);
     });
