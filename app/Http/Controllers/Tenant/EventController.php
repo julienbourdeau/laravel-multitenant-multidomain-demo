@@ -14,9 +14,9 @@ class EventController extends Controller
         return view('site.home');
     }
 
-    public function index()
+    public function index(EventList $eventList)
     {
-        return 'List of events';
+        $events = Event::all();
 
         return view('site.events', [
             'events' => $events,
